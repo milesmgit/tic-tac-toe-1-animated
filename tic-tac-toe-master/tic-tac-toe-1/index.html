@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Tic-Tac-Toe</title>
+    
+</head>
+<body>
+    <!-- button to start the game (turns off the rain)
+        by setting the divs class to rainOff -->
+        <button id="rainOffBtn">Start Game</button>
+
+        <!-- game reset button to clear local storage -->
+        <button id="gameReset">Game Reset</button>
+
+        <!-- audio button to start rain noise -->
+        <button class="audioBtn">Hear Rain</button>
+
+
+
+        
+
+
+
+
+
+
+        <!-- will use this div as a flex container (space around) to hold player scores in local storage -->
+    <div id="playerParentDiv">
+
+        <div class="playerScoreDiv" id="playerOneScoreDiv"></div>
+        <div class="playerScoreDiv" id="playerTwoScoreDiv"></div>
+
+    </div>
+
+
+   <div class="rain">
+
+        
+        <!-- display name of the game in this div -->
+        <div id="tic-tac-toe">
+            <p>Welcome to Tic-Tac-Toe!!!</p>
+            <p>Instructions: To being a new series, press Game Reset and then Start Game</p>
+            <p>Rules: Get 3 in Succession to Win!</p>
+        </div>
+
+        <!-- display who won the game in this div -->
+        <div id="winnerDiv">
+
+        </div>
+
+        
+
+            <!-- create the 3x3 gameboard using flexbox -->
+
+            <div class="parentFlexGrid">
+                <div class="grid"></div>
+                <div class="grid"></div>
+                <div class="grid"></div>
+            </div>
+            <div class="parentFlexGrid">
+                <div class="grid"></div>
+                <div class="grid"></div>
+                <div class="grid"></div>
+            </div>
+            <div class="parentFlexGrid">
+                <div class="grid"></div>
+                <div class="grid"></div>
+                <div class="grid"></div>
+            </div>
+
+        
+    
+    <div>
+
+
+        
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+
+body {
+    background: url('../img/cool1.jpg') no-repeat;
+    /* background-size originally set to cover; */
+    background-size: cover;
+    margin: 50px 0 90px 0;
+   
+}
+
+
+#playerParentDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* holds individual player scores */
+.playerScoreDiv {
+  font-size: 15px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  font-weight: bold;
+  margin: 30px 20px 10px 20px;
+}
+
+
+
+
+/* game instructions */
+#tic-tac-toe {
+  width: 100%;
+  color: lime;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+
+p {
+  margin: 0 20px 10px 20px;
+}
+
+
+#removeInstructions {
+  display: none;
+}
+
+#winnerDiv {
+    color: red;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+
+.parentFlexGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+.grid {
+    display: flex;
+    /* height and with original at 175 */
+    height: 100px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, .2);
+    border: 1px solid crimson;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.grid:hover {
+  background-color: rgba(255, 255, 255, .2);
+  
+}
+
+
+.grid button {
+  font-size: 40px;
+}
+
+
+button {
+    height: 75px;
+    width: 75px;
+    background-color: rgba(22, 22, 22, .2);
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, .8);  
+    border: 1px inset white;
+    text-shadow: 2px 2px 4px #000000;
+    
+}
+
+#rainOffBtn {
+  margin-left: 20px;
+}
+
+
+/* glowing border around the button when in focus */
+button:focus { 
+    outline: none;
+    border-color: #ed9ec5;
+    box-shadow: 0 0 10px #e7897d;
+}
+
+
+
+/* I do not understand the rain effect, but I had to use it
+with the theme of my tic-tac-toe board. */
+
+
+/* https://www.youtube.com/watch?v=UuGyvCYWI3I */
+.rain {
+   /* height originally set to 100vh */
+    height: 100vh;
+    background: url('../img/rain.png');
+    animation: rain .3s linear infinite;
+   
+    
+}
+
+.rain:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: fff;
+    animation: lighting 4s linear infinite;
+    opacity: 0;
+    
+}
+
+@keyframes rain
+{
+    0%
+    {
+        background-position: 0% 0%;
+    }
+    100%
+    {
+        background-position: 20% 100%;
+    }
+}
+
+
+
+
+/* on game end I will create a function that changes the class of the .grid to .gameOver 
+this animation will make the 3x3 grid move after a win. 
+https://www.w3schools.com/css/css3_animations.asp*/
+
+/* The animation code */
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    /* upon completion of animation, background will turn transparent. */
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example;
+    animation-duration: 3s;
+  }
+
+
+  /* The animation code */
+@keyframes example1 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; right:200px; top:1400px;}
+    50%  {background-color:blue; right:1200px; top:200px;}
+    75%  {background-color:green; right:0px; top:200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example1;
+    animation-duration: 4s;
+  }
+
+
+  /* The animation code */
+@keyframes example2 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; left:1050px; top:0px;}
+    50%  {background-color:blue; left:100px; top:200px;}
+    75%  {background-color:green; right:0px; top:1200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example2;
+    animation-duration: 5s;
+  }
+
+  /* The animation code */
+@keyframes example3 {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; right:1200px; top:0px;}
+    50%  {background-color:blue; left:170px; top:1160px;}
+    75%  {background-color:green; right:0px; top:200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color:  rgba(255, 0, 0, .2);
+    animation-name: example3;
+    animation-duration: 6s;
+  }
+
+
+  /* The animation code */
+@keyframes example4 {
+    0%   {background-color:red; right:20px; top:40px;}
+    25%  {background-color:yellow; right:80px; top:40px;}
+    50%  {background-color:blue; left:1045px; bottom:200px;}
+    75%  {background-color:green; right:0px; top:1200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example4;
+    animation-duration: 7s;
+  }
+
+  /* The animation code */
+@keyframes example5 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; left:20px; bottom:50px;}
+    50%  {background-color:blue; right:1420px; bottom:1100px;}
+    75%  {background-color:green; right:0px; top:200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example5;
+    animation-duration: 8s;
+  }
+
+  /* The animation code */
+@keyframes example6 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; left:765px; top:0px;}
+    50%  {background-color:blue; right:200px; bottom:25px;}
+    75%  {background-color:green; right:0px; top:1200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example6;
+    animation-duration: 9s;
+  }
+
+  /* The animation code */
+@keyframes example7 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:700px; top:600px;}
+    75%  {background-color:green; right:0px; top:200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example7;
+    animation-duration: 10s;
+  }
+
+  /* The animation code */
+@keyframes example8 {
+    0%   {background-color:red; right:0px; top:0px;}
+    25%  {background-color:yellow; right:800px; top:0px;}
+    50%  {background-color:blue; right:200px; top:700px;}
+    75%  {background-color:green; right:0px; top:200px;}
+    100% {background-color:red; right:0px; top:0px;}
+  }
+  
+  /* The element to apply the animation to */
+  .gameOver8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: rgba(255, 0, 0, .2);
+    animation-name: example8;
+    animation-duration: 11s;
+  }
+
+
+
+
+
+  /* ****************************************************************************************
+  *******************************************************************************************
+  ****************************    Media Queries for various screen sizes    *****************
+  *******************************************************************************************
+  **************************************************************************************** */
+
+
+  @media screen and (min-width: 700px) {
+    /* holds individual player scores */
+    .playerScoreDiv {
+      font-size: 20px;
+      margin: 30px 10px 10px 10px;
+    }
+
+    /* game instructions */
+    #tic-tac-toe {
+      font-size: 18px;
+    }
+
+  }
+
+
+
+
+  @media screen and (min-width: 860px) {
+    /* holds individual player scores */
+    .playerScoreDiv {
+      font-size: 20px;
+      margin: 30px 80px 10px 80px;
+    }
+
+    
+
+  }
